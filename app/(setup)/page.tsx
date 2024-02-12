@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
+import { IntialModel } from "@/components/models/Initial-model";
 
 const SetupPage = async () => {
   const profile = await initialProfile();
@@ -17,7 +18,11 @@ const SetupPage = async () => {
     return redirect(`/server/${server.id}`);
   }
 
-  return <div>create a server</div>;
+  return (
+    <div>
+      <IntialModel />
+    </div>
+  );
 };
 
 export default SetupPage;
