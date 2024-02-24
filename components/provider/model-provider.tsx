@@ -3,6 +3,10 @@ import { CreateServerModel } from "@/components/models/create-server-model";
 import { useEffect, useState } from "react";
 import { InviteModel } from "@/components/models/invite-model";
 import { EditServerModel } from "@/components/models/edit-server-model";
+import { MembersModel } from "@/components/models/members-model";
+import { CreateChannelModel } from "@/components/models/create-channel-model";
+import { LeaveServerModel } from "@/components/models/leave-server-model";
+import { DeleteServerModel } from "@/components/models/delete-server-model";
 
 export const ModelProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -19,6 +23,10 @@ export const ModelProvider = () => {
       <CreateServerModel />
       <InviteModel />
       <EditServerModel />
+      <MembersModel />
+      <CreateChannelModel />
+      <LeaveServerModel />
+      <DeleteServerModel />
     </>
   );
 };
