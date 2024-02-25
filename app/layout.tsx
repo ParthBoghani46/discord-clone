@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { cn } from "@/lib/utils";
 import { ModelProvider } from "@/components/provider/model-provider";
+import { SocketProvider } from "@/components/provider/socket-provider";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -28,8 +29,10 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="discord-theme"
           >
-            <ModelProvider />
-            {children}
+            <SocketProvider>
+              <ModelProvider />
+              {children}
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>
