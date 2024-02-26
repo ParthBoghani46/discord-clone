@@ -63,7 +63,6 @@ const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
             paramKey="channelId"
             paramValue={channel.id}
           />
-          <div className="flex-1"> Future Messages</div>
           <ChatInput
             name={channel.name}
             type="channel"
