@@ -1,9 +1,10 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { Plus } from "lucide-react";
 
 import { ActionTooltip } from "@/components/action-tooltip";
 import { useModel } from "@/hooks/use-model-store";
+
 export const NavigationAction = () => {
   const { onOpen } = useModel();
   return (
