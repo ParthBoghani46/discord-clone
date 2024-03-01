@@ -5,6 +5,8 @@ import { useParams, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ActionTooltip } from "@/components/action-tooltip";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 interface NavigationItemProps {
   id: string;
   imageUrl: string;
@@ -33,7 +35,12 @@ export const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
               "bg-primary/10 text-primary rounded-[16px]"
           )}
         >
-          <Image fill src={imageUrl} alt="Channel" />
+          <Image
+            fill
+            src={imageUrl}
+            alt="Channel"
+            sizes="(max-width: 10px) 10vw, (max-width: 12px) 5vw, 18x"
+          />
         </div>
       </button>
     </ActionTooltip>

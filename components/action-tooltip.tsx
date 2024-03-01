@@ -1,4 +1,6 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipProvider,
@@ -19,6 +21,14 @@ export const ActionTooltip = ({
   side,
   align,
 }: ActionTooltipProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  if (!isMounted) {
+    return null;
+  }
   return (
     <TooltipProvider>
       <Tooltip delayDuration={50}>
